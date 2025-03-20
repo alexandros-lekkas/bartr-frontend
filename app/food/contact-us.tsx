@@ -55,7 +55,7 @@ export function ContactUs() {
                 <Github className="w-6 h-6" />
               </Link>
               <Link
-                href="#"
+                href="https://linkedin.com/company/barternow"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
