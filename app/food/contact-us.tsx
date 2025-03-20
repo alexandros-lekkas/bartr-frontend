@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Mail, Github, Linkedin } from "lucide-react";
 
 export function ContactUs() {
   return (
@@ -39,6 +39,28 @@ export function ContactUs() {
               >
                 <Mail className="w-4 h-4" />
                 antony@barternow.app
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-12 animate-in fade-in duration-500">
+            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+            <div className="flex justify-center gap-6">
+              <Link
+                href="https://github.com/barter-team"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Github className="w-6 h-6" />
+              </Link>
+              <Link
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Linkedin className="w-6 h-6" />
               </Link>
             </div>
           </div>
