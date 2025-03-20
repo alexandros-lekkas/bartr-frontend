@@ -197,11 +197,23 @@ export function Features() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const index = parseInt(
+            entry.target.getAttribute("data-index") || "0"
+          );
           if (entry.isIntersecting) {
-            const index = parseInt(
-              entry.target.getAttribute("data-index") || "0"
-            );
             setActiveFeature(index);
+          } else if (activeFeature === index) {
+            // If the current active feature is leaving the viewport,
+            // find the next visible feature
+            const features = document.querySelectorAll("[data-feature]");
+            for (let i = 0; i < features.length; i++) {
+              const feature = features[i];
+              const rect = feature.getBoundingClientRect();
+              if (rect.top < window.innerHeight / 2) {
+                setActiveFeature(i);
+                break;
+              }
+            }
           }
         });
       },
@@ -216,7 +228,7 @@ export function Features() {
     features.forEach((feature) => observer.observe(feature));
 
     return () => observer.disconnect();
-  }, []);
+  }, [activeFeature]);
 
   return (
     <div className="relative">
@@ -230,11 +242,7 @@ export function Features() {
               speed={0.5}
               className="sticky top-0 h-[85vh] flex items-center"
             >
-              <div
-                data-feature
-                data-index={index}
-                className="w-full"
-              >
+              <div data-feature data-index={index} className="w-full">
                 <div
                   className={`container mx-auto px-4 flex flex-col ${
                     feature.direction === "right"
@@ -245,7 +253,7 @@ export function Features() {
                   <motion.div
                     className="flex-1 space-y-6 p-8 rounded-2xl bg-background"
                     animate={{
-                      opacity: activeFeature === index ? 1 : 0.3,
+                      opacity: activeFeature === index ? 1 : 0,
                       scale: activeFeature === index ? 1 : 0.95,
                     }}
                     transition={{
@@ -264,7 +272,7 @@ export function Features() {
                   <motion.div
                     className="flex-1 w-full"
                     animate={{
-                      opacity: activeFeature === index ? 1 : 0.3,
+                      opacity: activeFeature === index ? 1 : 0,
                       scale: activeFeature === index ? 1 : 0.95,
                       y: activeFeature === index ? 0 : 20,
                     }}
