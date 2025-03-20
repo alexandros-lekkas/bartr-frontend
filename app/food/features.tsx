@@ -231,10 +231,10 @@ export function Features() {
   }, [activeFeature]);
 
   return (
-    <div className="relative">
+    <div id="features" className="relative">
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]"></div>
 
-      <div className="container mx-auto px-4">
+      <div className="mx-auto">
         <div className="relative pb-[50vh]">
           {features.map((feature, index) => (
             <ParallaxSection

@@ -55,7 +55,7 @@ export function Logo({
           }
           alt="BarterNow Logo"
           fill
-          className="object-contain p-1"
+          className={cn("object-contain", size === "xl" ? "p-2" : "p-1")}
         />
       </div>
       {showText && (
