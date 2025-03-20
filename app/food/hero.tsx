@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
@@ -14,16 +13,16 @@ export function Hero() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
+    <div className="relative flex items-center justify-center min-h-screen">
       <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-transparent" />
 
-      <div className="relative w-full max-w-4xl mx-auto px-4">
+      <div className="relative w-full max-w-4xl px-4 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <Logo className="justify-center mb-6" size="xl" />
+          <Logo className="justify-center mb-6" size="xl" variant="default" />
         </motion.div>
 
         <motion.div
@@ -32,8 +31,8 @@ export function Hero() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           className="flex justify-center mb-4"
         >
-          <div className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm">
-            <span className="text-primary font-medium mr-2">New</span>
+          <div className="inline-flex items-center px-4 py-1 text-sm rounded-full bg-primary/10">
+            <span className="mr-2 font-medium text-primary">New</span>
             <span className="text-muted-foreground">
               Demo Now Available in Select Communities
             </span>
@@ -45,9 +44,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight"
+            className="mb-6 text-5xl font-bold tracking-tight md:text-7xl text-foreground"
           >
-            <span className="bg-gradient-to-r from-primary to-primary/80 text-transparent bg-clip-text">
+            <span className="text-transparent bg-gradient-to-r from-primary to-primary/80 bg-clip-text">
               AI-Powered
             </span>{" "}
             Food Trading
@@ -56,7 +55,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-            className="text-xl mb-6 max-w-2xl mx-auto"
+            className="max-w-2xl mx-auto mb-6 text-xl"
           >
             Transform your kitchen with instant food matching and trading.
             <br />
@@ -74,7 +73,7 @@ export function Hero() {
               onClick={scrollToFeatures}
               size="lg"
               variant="outline"
-              className="rounded-full px-8 py-3 h-auto text-base font-semibold cursor-pointer group"
+              className="h-auto px-8 py-3 text-base font-semibold rounded-full cursor-pointer group"
             >
               See How It Works
               <ArrowDown className="w-4 h-4 ml-2 transition-transform group-hover:translate-y-1" />
@@ -86,7 +85,7 @@ export function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="text-muted-foreground text-sm"
+              className="text-sm text-muted-foreground"
             >
               Scroll to explore
             </motion.div>

@@ -17,7 +17,7 @@ const logoVariants = cva("flex items-center gap-2", {
       false: "gap-0",
     },
     variant: {
-      default: "bg-primary",
+      default: "bg-gradient-to-tr from-primary to-primary/80",
       secondary: "bg-secondary",
       white: "bg-white",
     },
