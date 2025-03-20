@@ -4,20 +4,20 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <div className="relative">
-      <div className="px-4 py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-transparent" />
+    <div className="relative min-h-screen flex items-center justify-center">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-transparent" />
 
-        <div className="relative mb-8 flex justify-center">
+      <div className="relative w-full max-w-4xl mx-auto px-4">
+        <div className="flex justify-center mb-6">
           <div className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-sm animate-in fade-in duration-500">
             <span className="text-primary font-medium mr-2">New</span>
             <span className="text-muted-foreground">
-              AI Food Matching Now Available
+              Demo Version Now Available in Select Communities
             </span>
           </div>
         </div>
 
-        <div className="relative text-center max-w-4xl mx-auto">
+        <div className="text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight animate-in slide-in-from-bottom-4 duration-500">
             Your Food Sharing Success,{" "}
             <span className="bg-gradient-to-r from-primary to-primary/80 text-transparent bg-clip-text">
