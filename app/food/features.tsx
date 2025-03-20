@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Plus, Search, CheckCircle, ArrowRight } from "lucide-react";
+import { ParallaxSection } from "../components/parallax-section";
 
 const features = [
   {
@@ -190,7 +191,6 @@ function TradingMockup() {
 }
 
 export function Features() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [activeFeature, setActiveFeature] = useState(0);
 
   useEffect(() => {
@@ -198,14 +198,16 @@ export function Features() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = parseInt(entry.target.getAttribute("data-index") || "0");
+            const index = parseInt(
+              entry.target.getAttribute("data-index") || "0"
+            );
             setActiveFeature(index);
           }
         });
       },
       {
         root: null,
-        rootMargin: "-50% 0px",
+        rootMargin: "-45% 0px",
         threshold: 0,
       }
     );
@@ -217,34 +219,38 @@ export function Features() {
   }, []);
 
   return (
-    <div className="bg-muted/50 relative" ref={containerRef}>
-      <div className="container mx-auto px-4">
-        <div className="h-screen flex items-center justify-center">
-          <h2 className="text-6xl font-bold text-center text-foreground animate-in fade-in duration-500">
-            How It Works
-          </h2>
-        </div>
+    <div className="relative">
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.02]"></div>
 
-        <div className="relative">
+      <div className="container mx-auto px-4">
+        <div className="relative pb-[50vh]">
           {features.map((feature, index) => (
-            <div
+            <ParallaxSection
               key={index}
-              data-feature
-              data-index={index}
-              className="min-h-screen flex items-center"
+              speed={0.5}
+              className="sticky top-0 h-[85vh] flex items-center"
             >
               <div
-                className={`flex flex-col ${
-                  feature.direction === "right"
-                    ? "md:flex-row-reverse"
-                    : "md:flex-row"
-                } items-center gap-12`}
+                data-feature
+                data-index={index}
+                className="w-full"
               >
-                <div className="flex-1 sticky top-1/4">
-                  <motion.div 
-                    className="space-y-6 p-8 rounded-2xl transition-colors"
+                <div
+                  className={`container mx-auto px-4 flex flex-col ${
+                    feature.direction === "right"
+                      ? "md:flex-row-reverse"
+                      : "md:flex-row"
+                  } items-center gap-12`}
+                >
+                  <motion.div
+                    className="flex-1 space-y-6 p-8 rounded-2xl bg-background"
                     animate={{
-                      backgroundColor: activeFeature === index ? "var(--primary-5)" : "transparent",
+                      opacity: activeFeature === index ? 1 : 0.3,
+                      scale: activeFeature === index ? 1 : 0.95,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeInOut",
                     }}
                   >
                     <h3 className="text-4xl font-bold text-foreground">
@@ -254,13 +260,24 @@ export function Features() {
                       {feature.description}
                     </p>
                   </motion.div>
-                </div>
 
-                <div className="flex-1 w-full">
-                  <feature.mockup />
+                  <motion.div
+                    className="flex-1 w-full"
+                    animate={{
+                      opacity: activeFeature === index ? 1 : 0.3,
+                      scale: activeFeature === index ? 1 : 0.95,
+                      y: activeFeature === index ? 0 : 20,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <feature.mockup />
+                  </motion.div>
                 </div>
               </div>
-            </div>
+            </ParallaxSection>
           ))}
         </div>
       </div>
