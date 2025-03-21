@@ -9,7 +9,7 @@ const features = [
   {
     title: "List Your Items",
     description:
-      "Upload photos and details of the food items you want to share. Our AI-powered system helps you create attractive listings that catch attention.",
+      "Upload photos and details of any items you want to trade. Our AI-powered system helps you create attractive listings that catch attention.",
     direction: "left",
     mockup: ListingMockup,
   },
@@ -23,7 +23,7 @@ const features = [
   {
     title: "Seamless Trading",
     description:
-      "Arrange trades and share food items with your community. Track your exchanges and build your reputation as a trusted member.",
+      "Arrange trades and exchange items with your community. Track your exchanges and build your reputation as a trusted member.",
     direction: "left",
     mockup: TradingMockup,
   },
@@ -55,7 +55,7 @@ function ListingMockup() {
               animate={{ scale: isHovered ? 1.1 : 1 }}
               className="text-muted-foreground"
             >
-              Drop your food photos here
+              Drop your item photos here
             </motion.div>
           </div>
 
@@ -141,9 +141,8 @@ function TradingMockup() {
             {[0, 1, 2].map((index) => (
               <div
                 key={index}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  step >= index ? "bg-primary" : "bg-muted"
-                }`}
+                className={`w-2 h-2 rounded-full transition-colors ${step >= index ? "bg-primary" : "bg-muted"
+                  }`}
               />
             ))}
           </div>
@@ -244,11 +243,10 @@ export function Features() {
             >
               <div data-feature data-index={index} className="w-full">
                 <div
-                  className={`container mx-auto px-4 flex flex-col ${
-                    feature.direction === "right"
-                      ? "md:flex-row-reverse"
-                      : "md:flex-row"
-                  } items-center gap-12`}
+                  className={`container mx-auto px-4 flex flex-col ${feature.direction === "right"
+                    ? "md:flex-row-reverse"
+                    : "md:flex-row"
+                    } items-center gap-12`}
                 >
                   <motion.div
                     className="flex-1 space-y-6 p-8 rounded-2xl bg-background"

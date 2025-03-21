@@ -49,7 +49,7 @@ export function Hero() {
             <span className="text-transparent bg-gradient-to-r from-primary to-primary/80 bg-clip-text">
               AI-Powered
             </span>{" "}
-            Food Trading
+            Trading Platform
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -57,11 +57,11 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
             className="max-w-2xl mx-auto mb-6 text-xl"
           >
-            Transform your kitchen with instant food matching and trading.
+            Trade anything for anything with instant matching.
             <br />
-            Join our thriving community to eliminate waste and boost savings.
+            Join our thriving community to exchange items and save money.
             <br />
-            Together, let's revolutionize how we share food.
+            Together, let's revolutionize how we trade.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

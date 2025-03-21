@@ -6,9 +6,9 @@ import "./globals.css";
 const figtree = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BarterNow - AI-Powered Food Trading Platform",
-  description: "Transform your kitchen with instant food matching and trading. Join our thriving community to eliminate waste and boost savings. AI-powered food sharing platform.",
-  keywords: "food trading, food sharing, AI food matching, community food exchange, reduce food waste, sustainable food, food bartering, food swap, food marketplace",
+  title: "BarterNow - AI-Powered Trading Platform",
+  description: "Trade anything for anything with instant matching. Join our thriving community to exchange items and save money. AI-powered trading platform.",
+  keywords: "trading platform, item exchange, AI matching, community trading, bartering, item swap, marketplace, peer-to-peer trading",
   authors: [{ name: "BarterNow Team" }],
   creator: "BarterNow",
   publisher: "BarterNow",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://barternow.app',
     siteName: 'BarterNow',
-    title: 'BarterNow - AI-Powered Food Trading Platform',
-    description: 'Transform your kitchen with instant food matching and trading. Join our thriving community to eliminate waste and boost savings.',
+    title: 'BarterNow - AI-Powered Trading Platform',
+    description: 'Trade anything for anything with instant matching. Join our thriving community to exchange items and save money.',
     images: [
       {
         url: '/images/og-image.jpg',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BarterNow - AI-Powered Food Trading Platform',
-    description: 'Transform your kitchen with instant food matching and trading. Join our thriving community to eliminate waste and boost savings.',
+    title: 'BarterNow - AI-Powered Trading Platform',
+    description: 'Trade anything for anything with instant matching. Join our thriving community to exchange items and save money.',
     images: ['/images/twitter-image.jpg'],
     creator: '@barternow',
   },

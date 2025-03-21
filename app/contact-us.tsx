@@ -10,16 +10,16 @@ export function ContactUs() {
             Get in Touch
           </h2>
           <p className="text-muted-foreground mb-8 animate-in fade-in duration-500">
-            Have questions or need support? Our team is here to help you make the most of your food sharing journey.
+            Have questions or need support? Our team is here to help you make the most of your trading journey.
           </p>
-          
+
           <div className="grid md:grid-cols-2 gap-6 animate-in fade-in duration-500">
             <div className="p-6 bg-background rounded-lg shadow-sm border">
               <h3 className="text-lg font-semibold mb-2">For General Support</h3>
               <p className="text-muted-foreground mb-4">
                 Need help with your account or have general questions?
               </p>
-              <Link 
+              <Link
                 href="mailto:team@barternow.app"
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
               >
@@ -33,7 +33,7 @@ export function ContactUs() {
               <p className="text-muted-foreground mb-4">
                 Want to discuss partnerships or have strategic inquiries?
               </p>
-              <Link 
+              <Link
                 href="mailto:antony@barternow.app"
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
               >
