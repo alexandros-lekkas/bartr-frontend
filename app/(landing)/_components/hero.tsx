@@ -1,20 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { DottedMap } from "@/components/ui/dotted-map";
 import { Button } from "@/components/ui/button";
-import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
-import { cn } from "@/lib/utils";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { WaitlistDialog } from "./waitlist-dialog";
 
 const markers = [
   {
@@ -94,22 +82,7 @@ const markers = [
   }, // Johannesburg
 ];
 
-interface HeroProps {
-  isDialogOpen: boolean;
-  setIsDialogOpen: (open: boolean) => void;
-}
-
-export function Hero({ isDialogOpen, setIsDialogOpen }: HeroProps) {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Handle form submission with Vercel Blob
-    console.log("Email submitted:", email);
-    setIsDialogOpen(false);
-    setEmail("");
-  };
-
+export function Hero() {
   return (
     <div className="flex flex-col gap-4">
       <div className="relative h-[750px] w-full overflow-hidden rounded-lg">
@@ -159,12 +132,11 @@ export function Hero({ isDialogOpen, setIsDialogOpen }: HeroProps) {
 
             {/* CTA Buttons */}
             <div className="flex relative z-10 gap-4 items-center">
-              <Button
-                onClick={() => setIsDialogOpen(true)}
-                className="px-6 h-12 text-lg text-white rounded-full transition-all bg-primary hover:bg-primary/90"
-              >
-                Join the waitlist
-              </Button>
+              <WaitlistDialog>
+                <Button className="px-6 h-12 text-lg text-white rounded-full transition-all bg-primary hover:bg-primary/90">
+                  Join the waitlist
+                </Button>
+              </WaitlistDialog>
 
               <Button
                 variant="secondary"
@@ -177,37 +149,6 @@ export function Hero({ isDialogOpen, setIsDialogOpen }: HeroProps) {
           </div>
         </div>
       </div>
-
-      {/* Waitlist Dialog */}
-      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Join the Waitlist</DialogTitle>
-            <DialogDescription>
-              Enter your email to be notified when Bartr launches.
-            </DialogDescription>
-          </DialogHeader>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <Button
-              type="submit"
-              className="px-6 w-full h-12 text-lg text-white rounded-full transition-all bg-primary hover:bg-primary/90"
-            >
-              Join the waitlist
-            </Button>
-          </form>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }
