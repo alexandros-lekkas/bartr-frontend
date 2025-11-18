@@ -9,7 +9,7 @@ export default function HomePage() {
       <div className="pt-16">
         <Hero />
       </div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pt-24 pb-16">
         <BentoGridSection />
       </div>
     </>

@@ -2,123 +2,82 @@
 
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { Globe } from "@/components/ui/globe";
-import {
-  Bot,
-  GraduationCap,
-  ShoppingBag,
-  Trophy,
-  Sparkles,
-} from "lucide-react";
+import { AuroraText } from "@/components/ui/aurora-text";
+import { Bot, ShoppingBag, Trophy, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-// Glow text component
-function GlowText({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={cn("relative inline-block", className)}>
-      <h2
-        className={cn(
-          "text-4xl font-bold md:text-5xl lg:text-6xl",
-          "bg-gradient-to-r from-primary via-primary/80 to-primary",
-          "bg-clip-text text-transparent",
-          "drop-shadow-[0_0_15px_rgba(25,70,250,0.5)]",
-          "dark:drop-shadow-[0_0_15px_rgba(96,165,250,0.5)]"
-        )}
-        style={{
-          textShadow:
-            "0 0 20px rgba(25, 70, 250, 0.3), 0 0 40px rgba(25, 70, 250, 0.2)",
-        }}
-      >
-        {children}
-      </h2>
-    </div>
-  );
-}
 
 export function BentoGridSection() {
   return (
-    <div className="flex flex-col gap-12 py-16">
-      {/* Glow Text Section */}
+    <div className="flex flex-col gap-10">
+      {/* Aurora Text Section */}
       <div className="flex justify-center items-center">
-        <GlowText>Trade all over your neighborhood</GlowText>
+        <h2 className="text-2xl font-medium md:text-3xl lg:text-4xl">
+          Trade all over{" "}
+          <AuroraText
+            colors={["#1946fa", "#3b82f6", "#60a5fa", "#93c5fd"]}
+            className="font-medium"
+          >
+            in your neighborhood
+          </AuroraText>
+        </h2>
       </div>
 
       {/* Bento Grid */}
-      <BentoGrid className="md:grid-cols-3 lg:grid-cols-4">
-        {/* AI Buddy Card */}
-        <BentoCard
-          name="AI Buddy"
-          description="Get personalized trading assistance with our AI-powered buddy that helps you find the best trades and negotiate deals."
-          href="#"
-          cta="Learn more"
-          Icon={Bot}
-          className="col-span-3 md:col-span-1"
-          background={
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5" />
-          }
-        />
+      <div className="mx-auto w-full max-w-4xl">
+        <BentoGrid className="md:grid-cols-3">
+          {/* AI Buddy Card */}
+          <BentoCard
+            name="AI Buddy"
+            description="Get personalized trading assistance with our AI-powered buddy that helps you find the best trades and negotiate deals."
+            href="#"
+            cta="Learn more"
+            Icon={Bot}
+            className="col-span-3 md:col-span-1 cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🤖</text></svg>'),auto]"
+            background={
+              <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/50 via-white to-white" />
+            }
+          />
 
-        {/* Training Card */}
-        <BentoCard
-          name="Training & Education"
-          description="Learn the art of bartering with our comprehensive training programs designed to help you become a skilled trader."
-          href="#"
-          cta="Start learning"
-          Icon={GraduationCap}
-          className="col-span-3 md:col-span-1"
-          background={
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-500/5" />
-          }
-        />
+          {/* Trading Goods Card */}
+          <BentoCard
+            name="Trading Goods"
+            description="Find and trade goods for barter credits. Discover amazing items from your local community and trade what you have for what you need."
+            href="#"
+            cta="Explore trades"
+            Icon={ShoppingBag}
+            className="col-span-3 md:col-span-1 cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🛍️</text></svg>'),auto]"
+            background={
+              <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/50 via-white to-white" />
+            }
+          />
 
-        {/* Trading Goods Card */}
-        <BentoCard
-          name="Trading Goods"
-          description="Find and trade goods for barter credits. Discover amazing items from your local community and trade what you have for what you need."
-          href="#"
-          cta="Explore trades"
-          Icon={ShoppingBag}
-          className="col-span-3 md:col-span-1"
-          background={
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-green-500/5" />
-          }
-        />
+          {/* Active Trader Rewards Card */}
+          <BentoCard
+            name="Active Trader Rewards"
+            description="Win rewards for being an active trader. The more you trade, the more you earn. Unlock exclusive benefits and special offers."
+            href="#"
+            cta="View rewards"
+            Icon={Trophy}
+            className="col-span-3 md:col-span-1 cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🏆</text></svg>'),auto]"
+            background={
+              <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/50 via-white to-white" />
+            }
+          />
 
-        {/* Active Trader Rewards Card */}
-        <BentoCard
-          name="Active Trader Rewards"
-          description="Win rewards for being an active trader. The more you trade, the more you earn. Unlock exclusive benefits and special offers."
-          href="#"
-          cta="View rewards"
-          Icon={Trophy}
-          className="col-span-3 md:col-span-1"
-          background={
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-500/5" />
-          }
-        />
-
-        {/* Globe Card - Full Width */}
-        <BentoCard
-          name="Global Trading Network"
-          description="Connect with traders from around the world. See where trades are happening in real-time on our interactive globe."
-          href="#"
-          cta="Explore globe"
-          Icon={Sparkles}
-          className="col-span-3 md:col-span-3 lg:col-span-4"
-          background={
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-primary/10 to-blue-500/10" />
-              <Globe className="relative" />
-            </div>
-          }
-        />
-      </BentoGrid>
+          {/* Globe Card - Centered, 3 columns */}
+          <BentoCard
+            name="Global Trading Network"
+            description="Connect with traders from around the world. See where trades are happening in real-time on our interactive globe."
+            Icon={Sparkles}
+            className="col-span-3 cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🌍</text></svg>'),auto]"
+            background={
+              <div className="overflow-hidden absolute inset-0 bg-gradient-to-b from-neutral-50/50 via-white to-white">
+                <Globe className="relative" />
+              </div>
+            }
+          />
+        </BentoGrid>
+      </div>
     </div>
   );
 }
-

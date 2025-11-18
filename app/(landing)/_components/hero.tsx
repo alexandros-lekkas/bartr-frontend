@@ -85,7 +85,7 @@ const markers = [
 export function Hero() {
   return (
     <div className="flex flex-col gap-4">
-      <div className="relative h-[750px] w-full overflow-hidden rounded-lg">
+      <div className="relative h-[600px] w-full overflow-hidden rounded-lg">
         <div className="to-background absolute inset-0 bg-radial from-transparent to-70%" />
         <DottedMap markers={markers} markerColor="var(--primary)" />
 
@@ -104,7 +104,7 @@ export function Hero() {
                     "radial-gradient(ellipse 80% 70% at center, black 50%, transparent 90%)",
                 }}
               />
-              <h1 className="relative z-10 text-6xl font-medium leading-none text-primary">
+              <h1 className="relative z-10 text-6xl font-medium leading-none text-primary cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🤝</text></svg>'),auto]">
                 Trade with People,
                 <br />
                 Not Platforms
