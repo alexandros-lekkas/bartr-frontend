@@ -94,9 +94,9 @@ export function Hero() {
           <div className="flex flex-col gap-6 items-center px-4 max-w-2xl text-center">
             {/* Main Heading */}
             <h1 className="text-6xl font-medium leading-none text-primary">
-              AI Client simulations for
+              Bartr, Trade Anything
               <br />
-              better counselor training
+              for Anything
             </h1>
 
             {/* Description */}
