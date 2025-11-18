@@ -1,8 +1,20 @@
+"use client";
+
+import { useState } from "react";
 import { DottedMap } from "@/components/ui/dotted-map";
 import { Button } from "@/components/ui/button";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const markers = [
   {
@@ -82,7 +94,22 @@ const markers = [
   }, // Johannesburg
 ];
 
-export function Hero() {
+interface HeroProps {
+  isDialogOpen: boolean;
+  setIsDialogOpen: (open: boolean) => void;
+}
+
+export function Hero({ isDialogOpen, setIsDialogOpen }: HeroProps) {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Handle form submission with Vercel Blob
+    console.log("Email submitted:", email);
+    setIsDialogOpen(false);
+    setEmail("");
+  };
+
   return (
     <div className="flex flex-col gap-4">
       <div className="relative h-[750px] w-full overflow-hidden rounded-lg">
@@ -90,37 +117,97 @@ export function Hero() {
         <DottedMap markers={markers} markerColor="var(--primary)" />
 
         {/* Overlay Content */}
-        <div className="flex absolute inset-0 justify-center items-center">
-          <div className="flex flex-col gap-6 items-center px-4 max-w-2xl text-center">
+        <div className="flex absolute inset-0 z-10 justify-center items-center">
+          <div className="flex relative flex-col gap-6 items-center px-4 max-w-2xl text-center">
             {/* Main Heading */}
-            <h1 className="text-6xl font-medium leading-none text-primary">
-              Bartr, Trade Anything
-              <br />
-              for Anything
-            </h1>
+            <div className="relative">
+              {/* Individual blur backdrop for heading */}
+              <div
+                className="absolute inset-0 -inset-y-3 -inset-x-6 backdrop-blur-md bg-white/20"
+                style={{
+                  maskImage:
+                    "radial-gradient(ellipse 80% 70% at center, black 50%, transparent 90%)",
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 80% 70% at center, black 50%, transparent 90%)",
+                }}
+              />
+              <h1 className="relative z-10 text-6xl font-medium leading-none text-primary">
+                Trade with People,
+                <br />
+                Not Platforms
+              </h1>
+            </div>
 
             {/* Description */}
-            <p className="max-w-xl text-lg text-gray-600">
-              Speak directly with avatars to practice counseling skills, explore
-              different scenarios, and get instant feedback.
-            </p>
+            <div className="relative">
+              {/* Individual blur backdrop for description */}
+              <div
+                className="absolute inset-0 -inset-y-2 -inset-x-4 backdrop-blur-md bg-white/20"
+                style={{
+                  maskImage:
+                    "radial-gradient(ellipse 85% 60% at center, black 50%, transparent 90%)",
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse 85% 60% at center, black 50%, transparent 90%)",
+                }}
+              />
+              <p className="relative z-10 max-w-xl text-lg">
+                Bartr is a platform where people trade things with one another.
+                Connect directly with others to exchange what you have for what
+                you need.
+              </p>
+            </div>
 
             {/* CTA Buttons */}
-            <div className="flex gap-4 items-center">
-              <Button className="px-6 h-12 text-lg text-white rounded-full transition-all bg-primary hover:px-7 hover:bg-primary/90">
-                Get started
+            <div className="flex relative z-10 gap-4 items-center">
+              <Button
+                onClick={() => setIsDialogOpen(true)}
+                className="px-6 h-12 text-lg text-white rounded-full transition-all bg-primary hover:bg-primary/90"
+              >
+                Join the waitlist
               </Button>
 
               <Button
                 variant="secondary"
-                className="px-8 h-12 text-lg text-white bg-black rounded-full transition-all hover:px-9 hover:bg-gray-900"
+                className="px-8 h-12 text-lg text-white bg-black rounded-full transition-all hover:bg-gray-900"
+                asChild
               >
-                Book a demo
+                <a href="mailto:admin@bartr.it.com">Contact us</a>
               </Button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Waitlist Dialog */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Join the Waitlist</DialogTitle>
+            <DialogDescription>
+              Enter your email to be notified when Bartr launches.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <Button
+              type="submit"
+              className="px-6 w-full h-12 text-lg text-white rounded-full transition-all bg-primary hover:bg-primary/90"
+            >
+              Join the waitlist
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

@@ -39,36 +39,29 @@ export function Logo({
   size,
   showText,
   variant,
-  href = "/food",
+  href = "/",
 }: LogoProps) {
   return (
-    <Link href={href} className={cn("flex items-center", className)}>
-      <div
-        className={cn(
-          "relative rounded-md overflow-hidden",
-          logoVariants({ size, showText, variant })
-        )}
-      >
+    <Link href={href} className={cn("flex gap-2 items-center", className)}>
+      <div className="overflow-hidden relative w-8 h-8 rounded-md">
         <Image
-          src={
-            variant === "white" ? "/images/logo-white.png" : "/images/logo.png"
-          }
-          alt="BarterNow Logo"
+          src="/logo.jpg"
+          alt="barter Logo"
           fill
-          className={cn("object-contain", size === "xl" ? "p-2" : "p-1")}
+          className="object-cover"
         />
       </div>
       {showText && (
         <span
           className={cn(
-            "font-semibold",
+            "font-medium",
             size === "sm" && "text-sm",
-            size === "default" && "text-lg",
+            size === "default" && "text-base",
             size === "lg" && "text-xl",
             size === "xl" && "text-2xl"
           )}
         >
-          BarterNow
+          Bartr
         </span>
       )}
     </Link>
