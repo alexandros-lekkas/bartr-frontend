@@ -68,6 +68,8 @@ export function BentoGridSection() {
           <BentoCard
             name="Global Trading Network"
             description="Connect with traders from around the world. See where trades are happening in real-time on our interactive globe."
+            href="#"
+            cta="Explore network"
             Icon={Sparkles}
             className="col-span-3 cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🌍</text></svg>'),auto]"
             background={

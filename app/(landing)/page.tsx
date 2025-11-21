@@ -1,6 +1,7 @@
 import { Hero } from "./_components/hero";
 import { Navbar } from "./_components/navbar";
 import { BentoGridSection } from "./_components/bento-grid";
+import { BarterHub } from "./_components/barter-hub";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <div className="container px-4 pt-24 pb-16 mx-auto">
         <BentoGridSection />
       </div>
+      <BarterHub />
     </>
   );
 }
