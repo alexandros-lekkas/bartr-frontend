@@ -22,8 +22,6 @@ const GLOBE_CONFIG: COBEOptions = {
   baseColor: [1, 1, 1],
   markerColor: [25 / 255, 70 / 255, 250 / 255], // Primary color #1946fa
   glowColor: [1, 1, 1], // White glow
-  glowPower: 1.2,
-  glowRadiusScale: 1.5,
   markers: [
     // North America
     { location: [40.7128, -74.006], size: 0.08 }, // New York

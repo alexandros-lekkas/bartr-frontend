@@ -30,9 +30,9 @@ export function BentoGridSection() {
             name="AI Buddy"
             description="Experience unparalleled trading intelligence with our sophisticated AI companion. Discover premium opportunities and execute strategic exchanges with precision."
             Icon={Bot}
-            className="col-span-3 md:col-span-1 cursor-default"
+            className="col-span-3 cursor-default md:col-span-1"
             background={
-              <div className="absolute inset-0 overflow-hidden p-4 pr-0 flex items-start justify-end">
+              <div className="flex overflow-hidden absolute inset-0 justify-end items-start p-4 pr-0">
                 <div className="relative">
                   <Image
                     src="/bento/ai-buddy.png"
@@ -58,9 +58,9 @@ export function BentoGridSection() {
             name="Trade & Acquire"
             description="Exchange your items with the hub and earn premium barter credits. Curate your collection from our exclusive global network of distinguished traders."
             Icon={ShoppingBag}
-            className="col-span-3 md:col-span-1 cursor-default"
+            className="col-span-3 cursor-default md:col-span-1"
             background={
-              <div className="absolute inset-0 overflow-hidden p-4 pr-0 flex items-start justify-end">
+              <div className="flex overflow-hidden absolute inset-0 justify-end items-start p-4 pr-0">
                 <div className="relative">
                   <Image
                     src="/bento/trading-goods.png"
@@ -86,9 +86,9 @@ export function BentoGridSection() {
             name="Elite Rewards"
             description="Unlock exclusive rewards through your trading excellence. Elevate your status and accumulate premium credits with every strategic exchange."
             Icon={Trophy}
-            className="col-span-3 md:col-span-1 cursor-default"
+            className="col-span-3 cursor-default md:col-span-1"
             background={
-              <div className="absolute inset-0 overflow-hidden p-4 pr-0 flex items-start justify-end">
+              <div className="flex overflow-hidden absolute inset-0 justify-end items-start p-4 pr-0">
                 <div className="relative">
                   <Image
                     src="/bento/active-trading.png"
@@ -116,7 +116,7 @@ export function BentoGridSection() {
             Icon={Sparkles}
             className="col-span-3 cursor-default"
             background={
-              <div className="overflow-hidden absolute inset-0 bg-gradient-to-b via-white to-white from-neutral-50/50">
+              <div className="overflow-hidden absolute inset-0 via-white to-white bg-linear-to-b from-neutral-50/50">
                 <Globe className="relative" />
               </div>
             }
