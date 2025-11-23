@@ -2,7 +2,8 @@
 
 import { DottedMap } from "@/components/ui/dotted-map";
 import { Button } from "@/components/ui/button";
-import { WaitlistDialog } from "./waitlist-dialog";
+
+const WAITLIST_FORM_URL = "https://forms.gle/6rDABPGVGvh745Jc9";
 
 const markers = [
   {
@@ -85,7 +86,7 @@ const markers = [
 export function Hero() {
   return (
     <div className="flex flex-col gap-4">
-      <div className="relative h-[600px] w-full overflow-hidden rounded-lg">
+      <div className="relative h-[650px] w-full overflow-hidden rounded-lg">
         <div className="to-background absolute inset-0 bg-radial from-transparent to-70%" />
         <DottedMap markers={markers} markerColor="var(--primary)" />
 
@@ -132,11 +133,14 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex relative z-10 gap-4 items-center">
-              <WaitlistDialog>
-                <Button className="px-6 h-12 text-lg text-white rounded-full transition-all bg-primary hover:bg-primary/90">
+              <Button
+                className="px-6 h-12 text-lg text-white rounded-full transition-all bg-primary hover:bg-primary/90"
+                asChild
+              >
+                <a href={WAITLIST_FORM_URL} target="_blank" rel="noopener noreferrer">
                   Join the waitlist
-                </Button>
-              </WaitlistDialog>
+                </a>
+              </Button>
 
               <Button
                 variant="secondary"

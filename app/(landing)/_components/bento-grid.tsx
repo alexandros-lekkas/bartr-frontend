@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { Globe } from "@/components/ui/globe";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { Bot, ShoppingBag, Trophy, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export function BentoGridSection() {
   return (
@@ -29,12 +29,27 @@ export function BentoGridSection() {
           <BentoCard
             name="AI Buddy"
             description="Get personalized trading assistance with our AI-powered buddy that helps you find the best trades and negotiate deals."
-            href="#"
-            cta="Learn more"
             Icon={Bot}
-            className="col-span-3 md:col-span-1 cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🤖</text></svg>'),auto]"
+            className="col-span-3 md:col-span-1 cursor-default"
             background={
-              <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/50 via-white to-white" />
+              <div className="absolute inset-0 overflow-hidden p-4 pr-0 flex items-start justify-end">
+                <div className="relative">
+                  <Image
+                    src="/bento/ai-buddy.png"
+                    alt="AI Buddy"
+                    width={200}
+                    height={400}
+                    className="w-auto rounded-[30px] object-cover object-top shadow-lg"
+                    style={{
+                      aspectRatio: "9/16",
+                      height: "100%",
+                      maxHeight: "100%",
+                      transform: "translateX(15%)",
+                    }}
+                  />
+                  <div className="absolute inset-0 rounded-[30px] bg-blue-500/5 pointer-events-none" />
+                </div>
+              </div>
             }
           />
 
@@ -42,12 +57,27 @@ export function BentoGridSection() {
           <BentoCard
             name="Trading Goods"
             description="Find and trade goods for barter credits. Discover amazing items from your local community and trade what you have for what you need."
-            href="#"
-            cta="Explore trades"
             Icon={ShoppingBag}
-            className="col-span-3 md:col-span-1 cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🛍️</text></svg>'),auto]"
+            className="col-span-3 md:col-span-1 cursor-default"
             background={
-              <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/50 via-white to-white" />
+              <div className="absolute inset-0 overflow-hidden p-4 pr-0 flex items-start justify-end">
+                <div className="relative">
+                  <Image
+                    src="/bento/trading-goods.png"
+                    alt="Trading Goods"
+                    width={200}
+                    height={400}
+                    className="w-auto rounded-[30px] object-cover object-top shadow-lg"
+                    style={{
+                      aspectRatio: "9/16",
+                      height: "100%",
+                      maxHeight: "100%",
+                      transform: "translateX(15%)",
+                    }}
+                  />
+                  <div className="absolute inset-0 rounded-[30px] bg-blue-500/5 pointer-events-none" />
+                </div>
+              </div>
             }
           />
 
@@ -55,12 +85,27 @@ export function BentoGridSection() {
           <BentoCard
             name="Active Trader Rewards"
             description="Win rewards for being an active trader. The more you trade, the more you earn. Unlock exclusive benefits and special offers."
-            href="#"
-            cta="View rewards"
             Icon={Trophy}
-            className="col-span-3 md:col-span-1 cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🏆</text></svg>'),auto]"
+            className="col-span-3 md:col-span-1 cursor-default"
             background={
-              <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/50 via-white to-white" />
+              <div className="absolute inset-0 overflow-hidden p-4 pr-0 flex items-start justify-end">
+                <div className="relative">
+                  <Image
+                    src="/bento/active-trading.png"
+                    alt="Active Trading"
+                    width={200}
+                    height={400}
+                    className="w-auto rounded-[30px] object-cover object-top shadow-lg"
+                    style={{
+                      aspectRatio: "9/16",
+                      height: "100%",
+                      maxHeight: "100%",
+                      transform: "translateX(15%)",
+                    }}
+                  />
+                  <div className="absolute inset-0 rounded-[30px] bg-blue-500/5 pointer-events-none" />
+                </div>
+              </div>
             }
           />
 
@@ -68,12 +113,10 @@ export function BentoGridSection() {
           <BentoCard
             name="Global Trading Network"
             description="Connect with traders from around the world. See where trades are happening in real-time on our interactive globe."
-            href="#"
-            cta="Explore network"
             Icon={Sparkles}
-            className="col-span-3 cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🌍</text></svg>'),auto]"
+            className="col-span-3 cursor-default"
             background={
-              <div className="overflow-hidden absolute inset-0 bg-gradient-to-b from-neutral-50/50 via-white to-white">
+              <div className="overflow-hidden absolute inset-0 bg-gradient-to-b via-white to-white from-neutral-50/50">
                 <Globe className="relative" />
               </div>
             }

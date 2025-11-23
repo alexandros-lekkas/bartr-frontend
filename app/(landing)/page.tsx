@@ -8,10 +8,8 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <div className="pt-16">
-        <Hero />
-      </div>
-      <div className="container px-4 pt-24 pb-16 mx-auto">
+      <Hero />
+      <div className="pt-6">
         <BentoGridSection />
       </div>
       <BarterHub />

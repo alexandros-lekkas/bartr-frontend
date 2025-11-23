@@ -1,8 +1,6 @@
 import { ComponentPropsWithoutRef, ReactNode } from "react"
-import { ArrowRightIcon } from "@radix-ui/react-icons"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 
 interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode
@@ -55,52 +53,31 @@ const BentoCard = ({
     )}
     {...props}
   >
-    <div>{background}</div>
-    <div className="p-4">
-      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 lg:group-hover:-translate-y-10">
+    <div>
+      {background}
+    </div>
+    <div className="relative p-4">
+      {/* Blur backdrop that fades out */}
+      <div
+        className="absolute inset-0 bottom-0 top-auto pointer-events-none z-0 backdrop-blur-sm bg-white/20"
+        style={{
+          height: "200px",
+          maskImage: "linear-gradient(to top, black 0%, black 50%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to top, black 0%, black 50%, transparent 100%)",
+        }}
+      />
+      <div className="pointer-events-none relative z-10 flex transform-gpu flex-col gap-1">
         <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
-          <Icon className="h-7 w-7 transform-gpu text-primary transition-all duration-300 ease-in-out group-hover:scale-75" />
+          <Icon className="h-7 w-7 transform-gpu text-primary" />
         </div>
         <h3 className="text-xl font-semibold text-neutral-700 dark:text-neutral-300">
           {name}
         </h3>
-        <p className="max-w-lg text-foreground">{description}</p>
+        <p className="max-w-lg text-foreground">
+          {description}
+        </p>
       </div>
-
-      {cta && href && (
-        <div
-          className={cn(
-            "pointer-events-none flex w-full translate-y-0 transform-gpu flex-row items-center transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:hidden"
-          )}
-        >
-          <Button
-            variant="outline"
-            asChild
-            size="sm"
-            className="pointer-events-auto"
-          >
-            <a href={href}>{cta}</a>
-          </Button>
-        </div>
-      )}
     </div>
-
-    {cta && href && (
-      <div
-        className={cn(
-          "pointer-events-none absolute bottom-0 hidden w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 lg:flex"
-        )}
-      >
-        <Button
-          variant="outline"
-          asChild
-          size="sm"
-          className="pointer-events-auto"
-        >
-          <a href={href}>{cta}</a>
-        </Button>
-      </div>
-    )}
 
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
   </div>
