@@ -12,12 +12,12 @@ export function BentoGridSection() {
       {/* Aurora Text Section */}
       <div className="flex justify-center items-center">
         <h2 className="text-2xl font-medium md:text-3xl lg:text-4xl">
-          Trade all over{" "}
+          Experience the{" "}
           <AuroraText
             colors={["#1946fa", "#3b82f6", "#60a5fa", "#93c5fd"]}
             className="font-medium"
           >
-            in your neighborhood
+            future of exchange
           </AuroraText>
         </h2>
       </div>
@@ -28,7 +28,7 @@ export function BentoGridSection() {
           {/* AI Buddy Card */}
           <BentoCard
             name="AI Buddy"
-            description="Get personalized trading assistance with our AI-powered buddy that helps you find the best trades and negotiate deals."
+            description="Experience unparalleled trading intelligence with our sophisticated AI companion. Discover premium opportunities and execute strategic exchanges with precision."
             Icon={Bot}
             className="col-span-3 md:col-span-1 cursor-default"
             background={
@@ -47,7 +47,7 @@ export function BentoGridSection() {
                       transform: "translateX(15%)",
                     }}
                   />
-                  <div className="absolute inset-0 rounded-[30px] bg-blue-500/5 pointer-events-none" />
+                  <div className="absolute top-2 left-1 right-0 bottom-0 rounded-[30px] bg-blue-500/5 pointer-events-none" />
                 </div>
               </div>
             }
@@ -55,8 +55,8 @@ export function BentoGridSection() {
 
           {/* Trading Goods Card */}
           <BentoCard
-            name="Trading Goods"
-            description="Find and trade goods for barter credits. Discover amazing items from your local community and trade what you have for what you need."
+            name="Trade & Acquire"
+            description="Exchange your items with the hub and earn premium barter credits. Curate your collection from our exclusive global network of distinguished traders."
             Icon={ShoppingBag}
             className="col-span-3 md:col-span-1 cursor-default"
             background={
@@ -75,7 +75,7 @@ export function BentoGridSection() {
                       transform: "translateX(15%)",
                     }}
                   />
-                  <div className="absolute inset-0 rounded-[30px] bg-blue-500/5 pointer-events-none" />
+                  <div className="absolute top-2 left-1 right-0 bottom-0 rounded-[30px] bg-blue-500/5 pointer-events-none" />
                 </div>
               </div>
             }
@@ -83,8 +83,8 @@ export function BentoGridSection() {
 
           {/* Active Trader Rewards Card */}
           <BentoCard
-            name="Active Trader Rewards"
-            description="Win rewards for being an active trader. The more you trade, the more you earn. Unlock exclusive benefits and special offers."
+            name="Elite Rewards"
+            description="Unlock exclusive rewards through your trading excellence. Elevate your status and accumulate premium credits with every strategic exchange."
             Icon={Trophy}
             className="col-span-3 md:col-span-1 cursor-default"
             background={
@@ -103,7 +103,7 @@ export function BentoGridSection() {
                       transform: "translateX(15%)",
                     }}
                   />
-                  <div className="absolute inset-0 rounded-[30px] bg-blue-500/5 pointer-events-none" />
+                  <div className="absolute top-2 left-1 right-0 bottom-0 rounded-[30px] bg-blue-500/5 pointer-events-none" />
                 </div>
               </div>
             }
@@ -112,7 +112,7 @@ export function BentoGridSection() {
           {/* Globe Card - Centered, 3 columns */}
           <BentoCard
             name="Global Trading Network"
-            description="Connect with traders from around the world. See where trades are happening in real-time on our interactive globe."
+            description="Join an exclusive worldwide network of distinguished traders. Witness premium exchanges unfold in real-time across our interactive globe. Transform the ordinary into the extraordinary."
             Icon={Sparkles}
             className="col-span-3 cursor-default"
             background={

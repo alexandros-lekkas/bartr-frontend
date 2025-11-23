@@ -106,9 +106,9 @@ export function Hero() {
                 }}
               />
               <h1 className="relative z-10 text-6xl font-medium leading-none text-primary cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🤝</text></svg>'),auto]">
-                Trade with People,
+                Trade with the Hub,
                 <br />
-                Not Platforms
+                Elevate Your World
               </h1>
             </div>
 
@@ -125,9 +125,7 @@ export function Hero() {
                 }}
               />
               <p className="relative z-10 max-w-xl text-lg">
-                Bartr is a platform where people trade things with one another.
-                Connect directly with others to exchange what you have for what
-                you need.
+                Bartr redefines luxury exchange through our exclusive central hub. Trade your items for premium barter credits and access an unparalleled global network of curated goods. Where sophistication meets sustainability.
               </p>
             </div>
 

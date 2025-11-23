@@ -16,7 +16,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="text-sm font-medium transition-colors cursor-pointer hover:text-primary"
           >
-            Join the waitlist
+            Join the Waitlist
           </a>
           <a
             href="mailto:admin@bartr.it.com"
