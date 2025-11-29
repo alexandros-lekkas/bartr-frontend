@@ -1,0 +1,85 @@
+"use client";
+
+import { ArrowRight } from "lucide-react";
+import { Package, Coins, Globe, CheckCircle } from "lucide-react";
+
+const steps = [
+  {
+    title: "Bring Your Items",
+    description: "Trade your items with the hub",
+    icon: Package,
+  },
+  {
+    title: "Earn Credits",
+    description: "Get barter credits for your items",
+    icon: Coins,
+  },
+  {
+    title: "Browse Network",
+    description: "Explore our global trading network",
+    icon: Globe,
+  },
+  {
+    title: "Get What You Need",
+    description: "Find and acquire what you're looking for",
+    icon: CheckCircle,
+  },
+];
+
+export function ProcessFlow() {
+  return (
+    <section className="px-4 pt-20 pb-10">
+      <div className="mx-auto w-full max-w-5xl">
+        <div className="flex flex-col gap-12">
+          {/* Section Header */}
+          <div className="flex flex-col gap-2 text-center">
+            <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
+              How It Works
+            </h2>
+            <p className="text-muted-foreground">
+              Turn what you have into what you need
+            </p>
+          </div>
+
+          {/* Process Steps */}
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-4">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <div
+                  key={step.title}
+                  className="flex flex-col md:flex-row items-center gap-4 md:flex-1"
+                >
+                  {/* Step Card */}
+                  <div className="flex flex-col gap-3 items-center text-center p-6 rounded-lg border bg-card w-full md:w-auto">
+                    <div className="flex justify-center items-center w-16 h-16 rounded-full bg-primary/10">
+                      <Icon className="w-8 h-8 text-primary" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="text-lg font-semibold">{step.title}</h3>
+                      <p className="text-sm text-muted-foreground">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  {index < steps.length - 1 && (
+                    <div className="hidden md:flex items-center justify-center text-muted-foreground">
+                      <ArrowRight className="w-6 h-6" />
+                    </div>
+                  )}
+                  {index < steps.length - 1 && (
+                    <div className="flex md:hidden items-center justify-center text-muted-foreground">
+                      <ArrowRight className="w-6 h-6 rotate-90" />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

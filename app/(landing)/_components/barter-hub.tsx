@@ -1,6 +1,6 @@
 export function BarterHub() {
   return (
-    <section className="px-4 pt-40 pb-10">
+    <section className="px-4 pt-6 pb-10">
       <div className="mx-auto w-full max-w-5xl">
         <div className="grid gap-12 items-stretch md:grid-cols-[1.2fr_1fr]">
           {/* Image Section */}
