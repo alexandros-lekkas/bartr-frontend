@@ -5,23 +5,25 @@ import { Package, Coins, Globe, CheckCircle } from "lucide-react";
 
 const steps = [
   {
-    title: "Bring Your Items",
-    description: "Trade your items with the hub",
+    title: "Tell Us What You’re Selling",
+    description: "Choose the items you want to trade with the hub.",
     icon: Package,
   },
   {
-    title: "Earn Credits",
-    description: "Get barter credits for your items",
-    icon: Coins,
-  },
-  {
-    title: "Browse Network",
-    description: "Explore our global trading network",
+    title: "Bring Items for Check-In",
+    description:
+      "Bring your items (like electronics, clothes, or home goods) to the hub for inspection.",
     icon: Globe,
   },
   {
-    title: "Get What You Need",
-    description: "Find and acquire what you're looking for",
+    title: "Receive Bartr Credits",
+    description: "Once approved, get credits added to your Bartr account.",
+    icon: Coins,
+  },
+  {
+    title: "Buy What You Need",
+    description:
+      "Use your credits to buy food and other essentials from the online inventory.",
     icon: CheckCircle,
   },
 ];
