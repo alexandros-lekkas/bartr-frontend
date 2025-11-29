@@ -18,18 +18,19 @@ export function BarterHub() {
               <h2 className="text-2xl font-semibold md:text-3xl lg:text-4xl">
                 The Barter Hub
               </h2>
-              <p className="text-muted-foreground">Where Luxury Meets Exchange</p>
+              <p className="text-muted-foreground">Where Exchange Happens</p>
             </div>
 
             <div className="flex flex-col gap-4 text-lg leading-relaxed">
               <p>
-                Welcome to the Barter Hub, our premier physical location in the
-                heart of Amsterdam's World Fashion Center. This is where
-                sophisticated exchange takes center stage—an exclusive hub where discerning individuals trade with us, earn premium barter credits, and access an unparalleled collection of curated goods from our global network. Nestled in one of
-                Amsterdam's most prestigious neighborhoods, the Barter Hub stands as
-                the definitive destination for luxury trading. Here, you can
-                explore exceptional items in person, connect with our distinguished community, and experience the
-                future of refined exchange.
+                Welcome to the Barter Hub, our physical location in the heart of
+                Amsterdam's World Fashion Center. This is where trading comes to
+                life—a hub where you can trade with us, earn barter credits, and
+                access a wide collection of goods from our global network.
+                Located in Amsterdam's World Fashion Center, the Barter Hub is
+                your destination for trading. Here, you can explore items in
+                person, connect with our community, and experience the future of
+                exchange.
               </p>
               <p className="text-muted-foreground">
                 World Fashion Center, Amsterdam

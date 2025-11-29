@@ -106,9 +106,9 @@ export function Hero() {
                 }}
               />
               <h1 className="relative z-10 text-6xl font-medium leading-none text-primary cursor-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22><text x=%2212%22 y=%2218%22 font-size=%2220%22 text-anchor=%22middle%22>🤝</text></svg>'),auto]">
-                Trade with the Hub,
+                Turn what you have
                 <br />
-                Elevate Your World
+                into what you need
               </h1>
             </div>
 
@@ -125,7 +125,9 @@ export function Hero() {
                 }}
               />
               <p className="relative z-10 max-w-xl text-lg">
-                Bartr redefines luxury exchange through our exclusive central hub. Trade your items for premium barter credits and access an unparalleled global network of curated goods. Where sophistication meets sustainability.
+                Bartr makes trading simple and accessible. Trade your items for
+                barter credits and access a global network of goods. Turn what
+                you have into what you need, sustainably and efficiently.
               </p>
             </div>
 
@@ -135,7 +137,11 @@ export function Hero() {
                 className="px-6 h-12 text-lg text-white rounded-full transition-all bg-primary hover:bg-primary/90"
                 asChild
               >
-                <a href={WAITLIST_FORM_URL} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={WAITLIST_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Join the waitlist
                 </a>
               </Button>

@@ -9,10 +9,10 @@ export default function HomePage() {
     <>
       <Navbar />
       <Hero />
+      <BarterHub />
       <div className="pt-6">
         <BentoGridSection />
       </div>
-      <BarterHub />
       <Team />
     </>
   );

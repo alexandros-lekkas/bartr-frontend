@@ -28,7 +28,7 @@ export function BentoGridSection() {
           {/* AI Buddy Card */}
           <BentoCard
             name="AI Buddy"
-            description="Experience unparalleled trading intelligence with our sophisticated AI companion. Discover premium opportunities and execute strategic exchanges with precision."
+            description="Get smart trading suggestions with our AI companion. Find the best matches for your items and make exchanges that work for you."
             Icon={Bot}
             className="col-span-3 cursor-default md:col-span-1"
             background={
@@ -56,7 +56,7 @@ export function BentoGridSection() {
           {/* Trading Goods Card */}
           <BentoCard
             name="Trade & Acquire"
-            description="Exchange your items with the hub and earn premium barter credits. Curate your collection from our exclusive global network of distinguished traders."
+            description="Exchange your items with the hub and earn barter credits. Browse and find what you need from our global network of traders."
             Icon={ShoppingBag}
             className="col-span-3 cursor-default md:col-span-1"
             background={
@@ -83,8 +83,8 @@ export function BentoGridSection() {
 
           {/* Active Trader Rewards Card */}
           <BentoCard
-            name="Elite Rewards"
-            description="Unlock exclusive rewards through your trading excellence. Elevate your status and accumulate premium credits with every strategic exchange."
+            name="Rewards"
+            description="Earn rewards as you trade. Build up credits with every exchange and unlock more opportunities to get what you need."
             Icon={Trophy}
             className="col-span-3 cursor-default md:col-span-1"
             background={
@@ -112,7 +112,7 @@ export function BentoGridSection() {
           {/* Globe Card - Centered, 3 columns */}
           <BentoCard
             name="Global Trading Network"
-            description="Join an exclusive worldwide network of distinguished traders. Witness premium exchanges unfold in real-time across our interactive globe. Transform the ordinary into the extraordinary."
+            description="Join a worldwide network of traders. See exchanges happening in real-time across our interactive globe. Connect with people around the world to trade what you have for what you need."
             Icon={Sparkles}
             className="col-span-3 cursor-default"
             background={
