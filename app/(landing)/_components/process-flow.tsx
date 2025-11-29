@@ -51,7 +51,7 @@ export function ProcessFlow() {
                   className="flex flex-col md:flex-row items-center gap-4 md:flex-1"
                 >
                   {/* Step Card */}
-                  <div className="flex flex-col gap-3 items-center text-center p-6 rounded-lg border bg-card w-full md:w-auto">
+                  <div className="flex flex-col gap-3 items-center text-center p-6 rounded-lg border bg-card w-full shadow-md">
                     <div className="flex justify-center items-center w-16 h-16 rounded-full bg-primary/10">
                       <Icon className="w-8 h-8 text-primary" />
                     </div>
